@@ -10,12 +10,25 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setPrivateNavigation()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+//        let nav = UINavigationController(rootViewController: OnboardingViewController())
+        // TO DO: HomeViewController
+        let nav = UINavigationController(rootViewController: HomeViewController())
+        window.rootViewController = nav
+        window.makeKeyAndVisible()
+        self.window = window
         return true
+    }
+    
+    private func setPrivateNavigation() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().tintColor = .black
     }
 
     // MARK: UISceneSession Lifecycle
