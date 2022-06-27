@@ -58,4 +58,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.setup(category: categories[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: categoryCollectionView.frame.width / 3, height: 50)
+    }
 }
